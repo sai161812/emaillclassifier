@@ -1,25 +1,26 @@
 # Spam Email Classifier
 
-A machine learning project that detects whether an email/message is **Spam** or **Not Spam** using Natural Language Processing (NLP) and a trained classification model.
+A machine learning project that detects whether an email/message is **Spam** or **Not Spam** using Natural Language Processing (NLP).
 
-This project builds a complete spam detection pipeline including text preprocessing, feature extraction using TF-IDF, model training, evaluation, and a reusable prediction system.
+The system processes text messages, converts them into numerical features using **TF-IDF vectorization**, and predicts spam using a trained **machine learning classifier**.
 
 ---
 
 # Project Overview
 
-Spam detection is a classic Natural Language Processing problem.
-This project trains a classifier to automatically identify spam messages by learning patterns from a labeled dataset.
+Spam detection is a classic **Natural Language Processing (NLP)** problem.
+This project builds a complete spam detection pipeline that learns patterns from labeled messages and classifies new emails accordingly.
 
-The pipeline performs the following steps:
+The pipeline includes:
 
 1. Text cleaning
-2. Tokenization and stopword removal
-3. Feature extraction using TF-IDF
-4. Model training using a classifier
-5. Prediction on new messages
+2. Tokenization
+3. Stopword removal
+4. TF-IDF feature extraction
+5. Model training
+6. Prediction on new messages
 
-The trained model and vectorizer are saved and reused for future predictions without retraining.
+The trained **model** and **vectorizer** are saved and reused to allow instant predictions without retraining.
 
 ---
 
@@ -36,18 +37,16 @@ The trained model and vectorizer are saved and reused for future predictions wit
 
 # Dataset
 
-The model is trained on the **SMS Spam Collection Dataset**, which contains over **5,500 labeled SMS messages** categorized as:
+The model is trained on the **SMS Spam Collection Dataset**, which contains **5,500+ labeled SMS messages** categorized as:
 
-* Spam
-* Ham (Not Spam)
+* **Spam**
+* **Ham (Not Spam)**
 
 Each message is used to train the classifier to recognize spam patterns.
 
 ---
 
 # Machine Learning Pipeline
-
-The classifier uses the following pipeline:
 
 ```
 Raw Email
@@ -69,39 +68,26 @@ Spam / Not Spam Prediction
 
 # Installation
 
+Clone the repository:
+
+```
+git clone https://github.com/sai161812/emailclassifier.git
+cd emailclassifier
 ```
 
-Install dependencies.
-```
+Install dependencies:
 
+```
 pip install pandas nltk scikit-learn
 ```
 
-Download NLTK resources.
+Download required NLTK resources:
 
-```
-python
->>> import nltk
->>> nltk.download('punkt')
->>> nltk.download('stopwords')
-```
+```python
+import nltk
 
----
-
-# Running the Project
-
-Example usage:
-
-```
-Enter email text: Claim your free prize now
-Prediction: SPAM
-```
-
-Another example:
-
-```
-Enter email text: Meeting rescheduled on Monday
-Prediction: NOT SPAM
+nltk.download('punkt')
+nltk.download('stopwords')
 ```
 
 ---
@@ -115,7 +101,7 @@ spam_classifier.pkl
 vectorizer.pkl
 ```
 
-This allows the system to load the model instantly without retraining.
+This allows the system to **load the trained model instantly** without retraining every time the program runs.
 
 ---
 
@@ -138,12 +124,13 @@ Future enhancements may include:
 * REST API using FastAPI
 * Explainable AI for spam keyword detection
 * Real-time email filtering integration
+* Web interface for testing messages
 
 ---
 
 # Author
 
-Sai Prasad
+**Sai Prasad**
 B.Tech – Artificial Intelligence and Data Science
 
 ---
