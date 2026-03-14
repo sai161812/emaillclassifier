@@ -71,7 +71,7 @@ Spam / Not Spam Prediction
 Clone the repository:
 
 ```
-git clone https://github.com/sai161812/emailclassifier.git
+git clone https://github.com/sai161812/emaillclassifier.git
 cd emailclassifier
 ```
 
