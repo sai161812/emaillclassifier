@@ -134,3 +134,9 @@ Future enhancements may include:
 B.Tech – Artificial Intelligence and Data Science
 
 ---
+
+## Importing predictions from another directory
+
+`preddict.py` resolves the model and vectorizer relative to its own directory, so the caller's working directory does not determine artifact lookup. Both files must still be present in `model/`, and the NLTK resources and compatible training dependencies must be installed.
+
+Only load trusted pickle artifacts; deserialization can execute code. Run `python -m unittest discover -s tests -v` to verify path resolution with mocked artifacts. This test does not establish model accuracy or serialized-model compatibility.

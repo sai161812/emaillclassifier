@@ -1,11 +1,14 @@
 #this is how to actually use the model in projects
 
+from pathlib import Path
 import pickle
 from txtcleaner import clean_text, process_text
 
-with open("model/spam_classifier.pkl","rb") as f:
+MODEL_DIR = Path(__file__).resolve().parent / "model"
+
+with open(MODEL_DIR / "spam_classifier.pkl", "rb") as f:
     model = pickle.load(f)
-with open("model/vectorizer.pkl","rb") as f:
+with open(MODEL_DIR / "vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
 def predict_spam(email):
